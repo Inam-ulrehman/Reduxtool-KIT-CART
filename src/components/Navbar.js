@@ -1,16 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Outlet } from 'react-router-dom'
-import { totalCart } from '../features/cart/cartSlice'
-import { useSelector, useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-const Navbar = () => {
-  const { amount, cartItems } = useSelector((state) => state.cart)
-  const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(totalCart())
-  }, [cartItems])
+import { useSelector } from 'react-redux'
+
+const Navbar = () => {
+  const { amount } = useSelector((state) => state.cart)
+
   return (
     <>
       <Wrapper>
